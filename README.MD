@@ -22,3 +22,7 @@ metas
 fn: movimiento de la ficha, movimiento normal, movimiento meta
   al moverse la cantidad de passos 68>no, si la suma de 68> restar 68
   aqui muestras
+
+
+## Extra 
+animar los dados girandolos
