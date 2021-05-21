@@ -21,8 +21,9 @@ function _update()
 end
 
 function _draw()
-  cls()
-  print("pico-parchis")
-  first_dice:draw(45, 59)
-  second_dice:draw(67, 59)
+  cls(1)
+  -- print("pico-parchis")
+  -- first_dice:draw(45, 59)
+  -- second_dice:draw(67, 59)
+  draw_board()
 end
