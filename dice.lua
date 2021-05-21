@@ -5,33 +5,33 @@ function make_dice()
     throwing_dice=false,
     throwed_count=80
   }
-  return dice
-end
 
-function generate_dice(dice)
-  local sides = {
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-  }
-  dice.n = rnd(sides)
-  dice.sp = 16 + (2 * dice.n) -2
-end
-
-
-function throw_dice(dice)
-  generate_dice(dice)
-  if dice.throwed_count > 0 then
-    dice.throwed_count -= 1
-  else 
-    dice.throwing_dice = false
-    dice.throwed_count = 80
+  function dice.generate(self) 
+    local sides = {
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    }
+    self.n = rnd(sides)
+    self.sp = 16 + (2 * self.n) -2 
   end
-end
 
-function draw_dice(dice, x, y) 
- spr(dice.sp, x, y, 2, 2)
+  function dice.throw(self)
+    self:generate()
+    if self.throwed_count > 0 then
+      self.throwed_count -= 1
+    else 
+      self.throwing_dice = false
+      self.throwed_count = 80
+    end
+  end
+
+  function dice.draw(self, x, y)
+    spr(self.sp, x, y, 2, 2)
+  end
+
+  return dice
 end

@@ -3,8 +3,6 @@
 function _init()
   first_dice=make_dice()
   second_dice=make_dice()
-  -- anim=false
-  -- anim_time=80
 end
 
 function _update()
@@ -14,17 +12,17 @@ function _update()
   end
 
   if first_dice.throwing_dice then
-    throw_dice(first_dice)
+    first_dice:throw()
   end
 
   if second_dice.throwing_dice then
-    throw_dice(second_dice)
+    second_dice:throw()
   end
 end
 
 function _draw()
   cls()
   print("pico-parchis")
-  draw_dice(first_dice, 45, 59)
-  draw_dice(second_dice, 67, 59)
+  first_dice:draw(45, 59)
+  second_dice:draw(67, 59)
 end
