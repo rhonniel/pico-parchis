@@ -3,10 +3,13 @@ function make_board()
 end
 
 function draw_board()
-  draw_house(0, 0, "blue")
-  draw_house(128-(4*8), 0, "red")
-  draw_house(0, 128-(4*8), "orange")
-  draw_house(128-(4*8), 128-(4*8), "green")
+  --draw_house(0, 0, "blue")
+  --draw_house(128-(4*8), 0, "red")
+  --draw_house(0, 128-(4*8), "orange")
+  --draw_house(128-(4*8), 128-(4*8), "green")
+  map(0,0,0,0,16,8)
+  spr(100,20,10)
+  spr(100,55,32)
 end
 
 -- house code
